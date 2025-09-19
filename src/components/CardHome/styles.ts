@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
+import { ButtonContainer } from '../Tag&Button/styles'
 
 export const Card = styled.div`
   background-color: ${colors.branco};
@@ -8,6 +9,13 @@ export const Card = styled.div`
   flex-direction: column;
   gap: 0;
   position: relative;
+
+  > img {
+    width: 100%;
+    display: block;
+    height: 217px;
+    object-fit: cover;
+  }
 
   .infos {
     position: absolute;
