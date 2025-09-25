@@ -2,12 +2,19 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${colors.branco};
-  color: ${colors.vermelho};
+  background-color: ${colors.white};
+  color: ${colors.red};
   display: flex;
   flex-direction: column;
   gap: 0;
   position: relative;
+
+  > img {
+    width: 100%;
+    display: block;
+    height: 217px;
+    object-fit: cover;
+  }
 
   .infos {
     position: absolute;
@@ -18,9 +25,9 @@ export const Card = styled.div`
   }
 
   .card--body {
-    border-left: 1px solid ${colors.vermelho};
-    border-right: 1px solid ${colors.vermelho};
-    border-bottom: 1px solid ${colors.vermelho};
+    border-left: 1px solid ${colors.red};
+    border-right: 1px solid ${colors.red};
+    border-bottom: 1px solid ${colors.red};
   }
 `
 

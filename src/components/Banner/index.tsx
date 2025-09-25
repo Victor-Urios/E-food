@@ -1,13 +1,17 @@
-import banner from '../../assets/images/fundoPerfil.png'
-import { BannerContainer, Categoria, Restaurante } from './styles'
+import * as S from './styles'
 
-const Banner = () => (
-  <BannerContainer style={{ backgroundImage: `url(${banner})` }}>
+type Props = {
+  imagem: string
+  tipo: string
+  titulo: string
+}
+const Banner = ({ imagem, tipo, titulo }: Props) => (
+  <S.BannerContainer style={{ backgroundImage: `url(${imagem})` }}>
     <div className="container">
-      <Categoria>Italiana</Categoria>
-      <Restaurante>La Dolce Vita Trattoria</Restaurante>
+      <S.Categoria>{tipo}</S.Categoria>
+      <S.Restaurante>{titulo}</S.Restaurante>
     </div>
-  </BannerContainer>
+  </S.BannerContainer>
 )
 
 export default Banner

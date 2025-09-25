@@ -1,36 +1,40 @@
-import estrela from '../../assets/images/estrela.png'
-import { Card, CardHeader, Descricao } from './styles'
 import Tag from '../Tag&Button/Tag'
 import Button from '../Tag&Button/Button'
 
-type Props = {
-  imagem: string
-  nome: string
-  ava: number
-  descricao: string
-  infos: string[]
-  id: number
+import * as S from './styles'
+import estrela from '../../assets/images/estrela.png'
+
+type Props = Omit<Restaurante, 'cardapio'>
+
+const CardHome = ({
+  capa,
+  titulo,
+  avaliacao,
+  destacado,
+  descricao,
+  tipo,
+  id
+}: Props) => {
+  return (
+    <S.Card>
+      <img src={capa} />
+      <div className="infos">
+        {destacado && <Tag>Destacado da semana</Tag>}
+        <Tag>{tipo}</Tag>
+      </div>
+      <div className="card--body">
+        <S.CardHeader>
+          <h3>{titulo}</h3>
+          <div>
+            <h3>{avaliacao}</h3>
+            <img src={estrela} />
+          </div>
+        </S.CardHeader>
+        <S.Descricao>{descricao}</S.Descricao>
+        <Button to={`/restaurante/${id}`}>Saiba mais</Button>
+      </div>
+    </S.Card>
+  )
 }
-const CardHome = ({ imagem, nome, ava, descricao, infos }: Props) => (
-  <Card>
-    <img src={imagem} />
-    <div className="infos">
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-    </div>
-    <div className="card--body">
-      <CardHeader>
-        <h3>{nome}</h3>
-        <div>
-          <h3>{ava}</h3>
-          <img src={estrela} />
-        </div>
-      </CardHeader>
-      <Descricao>{descricao}</Descricao>
-      <Button to="/restaurante">Saiba mais</Button>
-    </div>
-  </Card>
-)
 
 export default CardHome

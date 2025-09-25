@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const HeaderContainer = styled.header`
   padding: 64px;
-  color: ${colors.vermelho};
+  color: ${colors.red};
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 14px;
@@ -20,6 +20,17 @@ export const HeaderContainer = styled.header`
 
     #carrinho {
       text-align: end;
+      cursor: pointer;
+    }
+
+    @media (width < ${breakpoints.tablet}) {
+      flex-direction: column;
+      gap: 16px;
+
+      h2 {
+        width: auto;
+        text-align: center !important;
+      }
     }
   }
 `
