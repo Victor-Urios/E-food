@@ -243,7 +243,7 @@ const Cart = () => {
             <>
               <S.DivContainer>
                 <h3>
-                  Pagamento - Valor a pagar
+                  Pagamento - Valor a pagar:{'  '}
                   <span>{formataPreco(getTotalPrice())}</span>
                 </h3>
                 <label htmlFor="cardDisplayName">Nome do cartão</label>
