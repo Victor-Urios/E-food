@@ -41,14 +41,24 @@ const Cart = () => {
         .required(),
       address: Yup.string().required('O campo é obrigatório'),
       city: Yup.string().required('O campo é obrigatório'),
-      cep: Yup.string().required('O campo é obrigatório'),
+      cep: Yup.string()
+        .min(10, 'O cep precisa estar completo!')
+        .required('O campo é obrigatório'),
       houseNumber: Yup.string().required('O campo é obrigatório'),
       complement: Yup.string(),
       cardDisplayName: Yup.string().required('O campo é obrigatório'),
-      cardNumber: Yup.string().required('O campo é obrigatório'),
-      cardCode: Yup.string().required('O campo é obrigatório'),
-      expiresMonth: Yup.string().required('O campo é obrigatório'),
-      expiresYear: Yup.string().required('O campo é obrigatório')
+      cardNumber: Yup.string()
+        .min(19, 'Precisa conter todos os numeros do cartão!')
+        .required('O campo é obrigatório'),
+      cardCode: Yup.string()
+        .min(3, 'Cvv incompleto!')
+        .required('O campo é obrigatório'),
+      expiresMonth: Yup.string()
+        .min(2, 'Mês incompleto!')
+        .required('O campo é obrigatório'),
+      expiresYear: Yup.string()
+        .min(2, 'Ano Incompleto!')
+        .required('O campo é obrigatório')
     }),
     onSubmit: (values) => {
       purchase({
