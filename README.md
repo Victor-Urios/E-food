@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+EFood
+
+A React + TypeScript food ordering web app (version 2.1.3).
+
+Tecnologies used
+
+React 18 with TypeScript
+Redux Toolkit & React Redux — state management
+React Router v7+ — client-side routing
+Formik + Yup — form handling and validation
+styled-components — component styling
+react-input-mask — masked input fields (e.g. phone numbers, cards)
+react-scripts (Create React App) — build tooling
+Testing Library (React, Jest DOM, User Event) — testing utilities
+
+## The website contains a front-page, restaurants and products with a TEST data-base provided by EBAC
+
+### Prerequisites
+
+- Node.js and npm installed
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
